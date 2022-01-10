@@ -18,7 +18,7 @@ public class Proizvod {
 	double productWeight;
 	
 	public void stampaj() {
-		System.out.println("{{" + this.productName+ "}}" + "{{"+ this.productPrice + " rsd"+"}}" +
+		System.out.println("{{" + this.productName+ "}} " + "{{"+ this.productPrice + " rsd"+"}} " +
 							"{{"+ this.productWeight + " gr"+"}}");
 	}
 }
