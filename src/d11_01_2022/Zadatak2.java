@@ -3,7 +3,7 @@ package d11_01_2022;
 public class Zadatak2 {
 
 	public static void main(String[] args) {
-SmartAirConditioning one= new SmartAirConditioning();
+		SmartAirConditioning one= new SmartAirConditioning();
 		
 		one.brand="Samsung";
 		one.temperature=20;
