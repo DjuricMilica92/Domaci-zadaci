@@ -18,7 +18,7 @@ public class SmartAirConditioning {
 	public int monthlyConsumption() {
 		int monthly=0;
 		if(this.mode.equals("hladi")) {
-			monthly=30*15*this.consumptionCooling;
+			monthly=20*15*this.consumptionCooling;
 		} else if(this.mode.equals("greje")) {
 			monthly=30*15*this.consumptionHeating;
 		}
@@ -29,9 +29,11 @@ public class SmartAirConditioning {
 	public int monthlyPrice() {
 		int price=0;
 		int greenZone=350;
-		
-			price=((this.monthlyConsumption() - greenZone) *9) + 350*6;
-			
-			return price;
+		if(this.monthlyConsumption()<=greenZone) {
+			price=this.monthlyConsumption()*6;
+		} else {
+			price=((this.monthlyConsumption() - greenZone) *9) + 350*6;	
 	}
+		return price;
+}
 }
