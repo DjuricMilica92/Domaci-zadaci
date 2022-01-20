@@ -26,60 +26,62 @@ public class Student {
 	private String student;
 	private String stepenStudija;
 	private ArrayList<Ispit> nizIspita = new ArrayList<Ispit>();
-	
-	
 
 	public Student(String brIndexa, String student, String stepenStudija) {
 		this.brIndexa = brIndexa;
 		this.student = student;
 		this.stepenStudija = stepenStudija;
 	}
-	
+
 	public String getBrIndexa() {
 		return brIndexa;
 	}
+
 	public void setBrIndexa(String brIndexa) {
 		this.brIndexa = brIndexa;
 	}
+
 	public String getStudent() {
 		return student;
 	}
+
 	public void setStudent(String student) {
 		this.student = student;
 	}
+
 	public String getStepenStudija() {
 		return stepenStudija;
 	}
+
 	public void setStepenStudija(String stepenStudija) {
 		this.stepenStudija = stepenStudija;
 	}
 
-	public ArrayList<Ispit> getNizIspita(){
+	public ArrayList<Ispit> getNizIspita() {
 		return nizIspita;
 	}
-	
+
 	public void dodajIspit(String predmet, int ocena, String profesor) {
-		this.nizIspita.add(new Ispit(predmet,ocena, profesor));
+		this.nizIspita.add(new Ispit(predmet, ocena, profesor));
 	}
-	
+
 	public int prosekPolozenih() {
-			int zbir=0;
-		for(int i=0; i<nizIspita.size(); i++) {
-			if(nizIspita.get(i).polozenIspit()==true) {
-				zbir=zbir + nizIspita.get(i).getOcena();
+		int zbir = 0;
+		for (int i = 0; i < nizIspita.size(); i++) {
+			if (nizIspita.get(i).polozenIspit() == true) {
+				zbir = zbir + nizIspita.get(i).getOcena();
 			}
 		}
-		return zbir/nizIspita.size();
+		return zbir / nizIspita.size();
 	}
-		
+
 	public void stampaj() {
 		System.out.println(this.brIndexa + " - " + this.student + " - " + this.stepenStudija);
 		System.out.println("Predmet:");
-		for(int i=0; i< nizIspita.size();i++) {
+		for (int i = 0; i < nizIspita.size(); i++) {
 			nizIspita.get(i).stampa();
 		}
 		System.out.println("Prosecna ocena je " + this.prosekPolozenih());
-		}
-	
 	}
 
+}
