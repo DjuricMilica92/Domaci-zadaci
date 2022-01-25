@@ -11,22 +11,21 @@ public class SuperKartica {
 //		metodu stampaj koja stampa karticu u formatu:
 //		(broj kartice), (ime i prezime)
 
-	private int brKartice;
+	private String brKartice;
 	private String vlasnik;
-	private int popust;
-	
-	public SuperKartica(int brKartice, String vlasnik, int popust) {
-		super();
+	private double popust;
+
+	public SuperKartica(String brKartice, String vlasnik, double popust) {
 		this.brKartice = brKartice;
 		this.vlasnik = vlasnik;
 		this.popust = popust;
 	}
 
-	public int getBrKartice() {
+	public String getBrKartice() {
 		return brKartice;
 	}
 
-	public void setBrKartice(int brKartice) {
+	public void setBrKartice(String brKartice) {
 		this.brKartice = brKartice;
 	}
 
@@ -38,16 +37,16 @@ public class SuperKartica {
 		this.vlasnik = vlasnik;
 	}
 
-	public int getPopust() {
+	public double getPopust() {
 		return popust;
 	}
 
-	public void setPopust(int popust) {
+	public void setPopust(double popust) {
 		this.popust = popust;
 	}
-	
 
 	public void stampaKartice() {
-		System.out.println("Broj kartice: " + this.brKartice +", "+ this.vlasnik);
+		System.out.println("***Super Kartica***");
+		System.out.println("Broj kartice: " + this.brKartice + ", " + this.vlasnik);
 	}
 }
