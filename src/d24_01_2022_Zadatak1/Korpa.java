@@ -26,9 +26,9 @@ public class Korpa {
 		}
 	}
 
-	private double cenaSaPopustom(int popust) {
+	private double cenaSaPopustom(double popust) {
 		double cenaSaPopustom = 0;
-	
+
 		for (int i = 0; i < nizAmbalaza.size(); i++) {
 			cenaSaPopustom = cenaSaPopustom + nizAmbalaza.get(i).cenaArtikla();
 		}
@@ -36,10 +36,16 @@ public class Korpa {
 		return cenaSaPopustom - (cenaSaPopustom * (popust / 100));
 	}
 
+	public double cenaKorpe(SuperKartica sk) {
+		return this.cenaSaPopustom(sk.getPopust());
+	}
+
 	public void stampaj() {
 		System.out.println("Korpa: ");
 		for (int i = 0; i < nizAmbalaza.size(); i++) {
 			nizAmbalaza.get(i).stampa();
+			System.out.println();
 		}
+
 	}
 }
