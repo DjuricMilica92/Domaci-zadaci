@@ -17,8 +17,12 @@ public abstract class Ambalaza {
 	protected double netoTezina;
 	protected double brutoTezina;
 
+	public Ambalaza() {
+
+	}
+
 	public Ambalaza(String barkod, String naziv, double netoTezina, double brutoTezina) {
-		super();
+
 		this.barkod = barkod;
 		this.naziv = naziv;
 		this.netoTezina = netoTezina;
@@ -56,11 +60,12 @@ public abstract class Ambalaza {
 	public void setBrutoTezina(double brutoTezina) {
 		this.brutoTezina = brutoTezina;
 	}
-	
+
 	public double tezinaPakovanja() {
-		return brutoTezina-netoTezina;
+		return this.brutoTezina - this.netoTezina;
 	}
-	
+
 	public abstract double cenaArtikla();
+
 	public abstract void stampa();
 }
